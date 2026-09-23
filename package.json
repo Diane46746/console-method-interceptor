@@ -1,0 +1,17 @@
+{
+  "name": "console-method-interceptor",
+  "version": "0.1.0",
+  "description": "Wraps the global console methods so that every call is forwarded to the original log while also being captured into a ring buffer for later retrieval.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}

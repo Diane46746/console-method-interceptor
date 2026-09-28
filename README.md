@@ -41,3 +41,10 @@ When debugging complex applications, it is often useful to see what has been log
 - Calling `start()` more than once has no effect; calling `stop()` more than once has no effect.
 - Arguments are stored by reference. If an object is logged and later mutated, the captured entry will reflect the mutation.
 - If a configured method is not a function on the console object (for example, a custom console without `debug`), it is skipped without error.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
